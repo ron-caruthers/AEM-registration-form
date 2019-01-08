@@ -1,0 +1,83 @@
+<sly data-sly-test.componentName="c10-partner-registration-form" />
+
+<div class="${componentName}__container">
+
+  <sly
+    data-sly-test.classNameLogo="${componentName}__logo"
+    data-sly-resource="${'logo' @
+      cssClassName=classNameLogo,
+      decoration=true,
+      resourceType='informatica-commons/components/content/image/v1/image'
+    }"></sly>
+  <div class="required-field" data-sly-resource="${'title_50' @ resourceType='informatica-commons/components/content/title/v1/title', decoration=true}"></div>
+  <div data-sly-resource="${'title_10' @ resourceType='informatica-commons/components/content/title/v1/title', decoration=true}" data-sly-unwrap=${!wcmmode.edit}></div>
+
+  <form class="${componentName}__form" action="/bin/prm/register">
+    <div class="required-field" data-sly-resource="${'options_10' @ resourceType='informatica-prm/components/form/options/v1/options', decoration=true}"></div>
+    <div data-sly-resource="${'text_10' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}" data-sly-unwrap=${!wcmmode.edit}></div>
+    <div class="required-field" data-sly-resource="${'options_20' @ resourceType='informatica-prm/components/form/options/v1/options', decoration=true}"></div>
+
+    <div data-sly-resource="${'title_20' @ resourceType='informatica-commons/components/content/title/v1/title', decoration=true}" data-sly-unwrap=${!wcmmode.edit}></div>
+    <div class="required-field" data-sly-resource="${'text_20' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+    <div class="required-field" data-sly-resource="${'text_30' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+    <div class="required-field" data-sly-resource="${'text_40' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+
+    <!--/* Country and state selection. This section is heavily coupled with CSS + JS. */-->
+    <div class="${componentName}__country-selection">
+      <div class="${componentName}__country-selection__country-dropdown required-field" data-sly-resource="${'options_30' @ resourceType='informatica-prm/components/form/options/v1/options', decoration=true}"></div>
+      <div class="${componentName}__columns">
+        <div class="${componentName}__country-selection__state-dropdown left required-field"
+            data-sly-attribute.hidden="${!wcmmode.edit}"
+            data-sly-resource="${'options_40' @ resourceType='informatica-prm/components/form/options/v1/options', decoration=true}"></div>
+        <div class="${componentName}__country-selection__state-text ${wcmmode.edit ? 'right' : 'left'} required-field" data-sly-resource="${'text_44' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+        <div class="${wcmmode.edit ? 'left' : 'right'} required-field" data-sly-resource="${'text_50' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+      </div>
+    </div>
+
+    <div class="${componentName}__columns">
+      <div class="left required-field" data-sly-resource="${'text_60' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+      <div class="right" data-sly-resource="${'text_70' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+      <div class="left required-field" data-sly-resource="${'text_80' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+    </div>
+
+    <!--/* Primary Alliance Contact */-->
+    <div data-sly-resource="${'title_40' @ resourceType='informatica-commons/components/content/title/v1/title', decoration=true}" data-sly-unwrap=${!wcmmode.edit}></div>
+    <div class="${componentName}__columns">
+      <div class="left required-field" data-sly-resource="${'text_100' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+      <div class="right required-field" data-sly-resource="${'text_110' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+      <div class="left required-field" data-sly-resource="${'text_120' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+      <div class="right required-field" data-sly-resource="${'text_130' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+      <div class="left required-field" data-sly-resource="${'text_140' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+    </div>
+
+    <!--/* Business Information */-->
+    <div data-sly-resource="${'title_70' @ resourceType='informatica-commons/components/content/title/v1/title', decoration=true}" data-sly-unwrap=${!wcmmode.edit}></div>
+    <div class="${componentName}__columns">
+      <div class="left required-field" data-sly-resource="${'options_50' @ resourceType='informatica-prm/components/form/options/v1/options', decoration=true}"></div>
+      <div class="right required-field" data-sly-resource="${'options_60' @ resourceType='informatica-prm/components/form/options/v1/options', decoration=true}"></div>
+      <div class="left required-field" data-sly-resource="${'text_250' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+      <div class="right" data-sly-resource="${'text_260' @ resourceType='informatica-prm/components/form/text/v1/text', decoration=true}"></div>
+    </div>
+
+    <!--/* Program Information */-->
+    <div data-sly-resource="${'title_80' @ resourceType='informatica-commons/components/content/title/v1/title', decoration=true}" data-sly-unwrap=${!wcmmode.edit}></div>
+    <div class="required-field" data-sly-resource="${'options_70' @ resourceType='informatica-prm/components/form/options/v1/options', decoration=true}"></div>
+    <div class="required-field" data-sly-resource="${'options_80' @ resourceType='informatica-prm/components/form/options/v1/options', decoration=true}"></div>
+    <div class="required-field" data-sly-resource="${'options_90' @ resourceType='informatica-prm/components/form/options/v1/options', decoration=true}"></div>
+    <div class="user-verify-option" data-sly-resource="${'options_100' @ resourceType='informatica-prm/components/form/options/v1/options', decoration=true}"></div>
+
+    <!--/* Submit Your Application */-->
+    <div data-sly-resource="${'text_270' @ resourceType='informatica-commons/components/content/text/v1/text', decoration=true}" data-sly-unwrap=${!wcmmode.edit}></div>
+
+    <div data-sly-resource="${'hidden_register_partner' @ resourceType='informatica-prm/components/form/hidden/v1/hidden', decoration=true}" data-sly-unwrap=${!wcmmode.edit}></div>
+
+    <div class="${componentName}__captcha"
+      data-sly-resource="${'captcha' @
+        decoration=true,
+        resourceType='informatica-prm/components/form/recaptcha'
+      }"></div>
+
+    <div class="status-message" data-status="">some error</div>
+    <div class="${componentName}__submit" data-sly-resource="${'submit' @ resourceType='informatica-prm/components/form/button/v1/button', decoration=true}"></div>
+  </form>
+</div>

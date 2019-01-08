@@ -1,0 +1,166 @@
+@import 'scss/variables';
+
+.c10-partner-registration-form {
+  $_spacing: 14px;
+
+  &__container {
+    background: $infa-cool-gray;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: #{($_spacing * 2)} #{($_spacing * 3)};
+    margin: #{($_spacing * 3)} auto;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  &__logo {
+    margin-bottom: $_spacing;
+  }
+
+  &__columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > div {
+      width: 100%;
+    }
+
+    @media screen and (min-width: $breakpoint_sm) {
+      > div {
+        width: 50%;
+
+        &.left {
+          padding-right: $_spacing * 1.5;
+        }
+
+        &.right {
+          padding-left: $_spacing * 1.5;
+        }
+      }
+    }
+  }
+
+  &__captcha {
+    margin-bottom: $_spacing * 2;
+  }
+
+  .label,
+  label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 400;
+    margin-bottom: $_spacing;
+    margin-top: 0;
+  }
+
+  // Dropdowns/Select
+  input[type="number"],
+  input[type="tel"],
+  input[type="text"],
+  select,
+  textarea {
+    background: $body-bg;
+    border: none;
+    box-sizing: border-box;
+    display: block;
+    height: auto;
+    font-size: 0.9em;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: $_spacing * 2;
+    min-height: 56px;
+    outline: none;
+    padding: $_spacing;
+    width: 100%;
+
+    &::placeholder {
+      color: $infa-cool-gray-4;
+      font-weight: normal;
+    }
+
+    &.field-error {
+      border: 1px solid $error-red;
+    }
+  }
+
+  .form-group {
+    margin-bottom: $_spacing * 2;
+  }
+
+  .text-component {
+    padding-left: 0;
+    padding-right: 0;
+
+    @media screen and (min-width: $breakpoint_md) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .status-message {
+    border-radius: 2px;
+    color: $error-red;
+    display: none;
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: $_spacing * 2;
+    padding: 4px 7px;
+
+    &[data-status="error"] {
+      background: $error;
+      display: block;
+    }
+
+    &[data-status="success"] {
+      background: $state-success-bg;
+      display: block;
+    }
+  }
+
+  &__submit button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  fieldset {
+    margin: 0 0 #{($_spacing * 3)};
+    padding: $_spacing;
+  }
+
+  // ERROR LABEL STYLING
+  // NOTE: Consider moving this into a separate form styling file if another form gets created
+  .error {
+    background: $error-red;
+    color: $error-text-color;
+    display: none;
+    margin-top: -15px;
+    padding: 4px 7px;
+    position: relative;
+
+    &::before {
+      border: 9px solid transparent;
+      border-bottom-color: $error-red;
+      content: "";
+      display: block;
+      height: 0;
+      left: 14px;
+      position: absolute;
+      top: -18px;
+      width: 0;
+    }
+  }
+
+  .required-field div p, .required-field > div > div > label:first-child {
+    color: red;
+  }
+  .required-field h4 {
+      color: red;
+  }
+
+  .user-verify-option > div > fieldset > div > label:first-child {
+    color: red;
+  }
+}
